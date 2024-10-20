@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <h3>Média</h3>
+        <p>Escrever um algoritmo para determinar o consumo médio de um automóvel sendo
+            fornecida a distância total percorrida pelo automóvel e o total de combustível gasto.</p>
+        <form class="formulario">
+            <label for="numero1">Distância percorrida:</label>
+            <input type="number" name="n2"id="numero1">
+            <label for="numero2">Consumo de combustível:</label>
+            <input type="number" name="n2" id="numero2">
+            <button type="button" onclick="calcular()">Calcular</button>
+        </form>
+    </div>
+    <div class="resposta">
+
+    </div>
+
+    <script>
+        function calcular(){
+            let n1 = parseFloat(document.getElementById("numero1").value);
+            let n2 = parseFloat(document.getElementById("numero2").value);
+            let media = parseFloat((n1/n2).toFixed(2));
+            document.querySelector("div[class='resposta']").innerHTML = "<h3>O consumo médio foi de "+media+" KMm/l</h3>"
+        }
+    </script>
+     <footer>
+        <a href="conceito.html">Voltar</a>
+    </footer>
+</body>
+</html>

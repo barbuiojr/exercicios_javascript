@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custo de um carro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <div>
+        <h3>Custo de um carro</h3>
+        <p>O custo ao consumidor de um carro novo é a soma do custo de fábrica com a
+            percentagem do distribuidor e dos impostos (aplicados, primeiro os impostos sobre o
+            custo de fábrica, e depois a percentagem do distribuidor sobre o resultado). Supondo
+            que a percentagem do distribuidor seja de 28% e os impostos 45%. Escrever um
+            algoritmo que leia o custo de fábrica de um carro e informe o custo ao consumidor do
+            mesmo.</p>
+        <form class="formulario">
+            <label for="custo">Digite o preço de custo do carro: R$:</label>
+            <input type="number" name="custo" id="custo">
+            <button type="button" onclick="calcular()">Calcular</button>
+        </form>
+    </div>
+    <div class="resposta">
+
+    </div>
+
+    <script>
+        function calcular(){
+            let custo = parseFloat(document.getElementById("custo").value);
+            let precovenda = parseFloat(((custo*1.45)*1.28).toFixed(2));
+            let precoFormat = precovenda.toLocaleString("pt-br",{style:"currency", currency:'BRL'});
+            document.querySelector('div[class="resposta"]').innerHTML = '<h3>O preço final do veículo, com 45% de impostos mais 28% de margem do distribuidor será de '+precoFormat+'</h3>'
+        }
+    </script>
+     <footer>
+        <a href="conceito.html">Voltar</a>
+    </footer>
+</body>
+</html>

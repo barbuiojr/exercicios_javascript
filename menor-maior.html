@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menor e Maior</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <div>
+        <h3>Menor e Maior</h3>
+        <p>Construa um algoritmo que imprima qual o menor e qual o maior
+            valor de dois números A e B, lidos através do teclado.</p>
+        <form class="formulario">
+            <label for="numero1">Digite primeiro número</label>
+            <input type="number" name="n2"id="numero1">
+            <label for="numero2">Digite o segundo número</label>
+            <input type="number" name="n2" id="numero2">
+            <button type="button" onclick="verificar()">Verificar</button>
+        </form>
+    </div>
+    <div class="resposta">
+
+    </div>
+
+    <script>
+        function verificar(){
+            let n1 = parseInt(document.getElementById("numero1").value);
+            let n2 = parseInt(document.getElementById("numero2").value);
+            if (n1>n2){
+                document.querySelector("div[class='resposta']").innerHTML = "<h3>O número "+n1+" é maior que "+n2+"</h3>"
+            } else if (n2>n1){
+                document.querySelector("div[class='resposta']").innerHTML = "<h3>O número "+n2+" é maior que "+n1+"</h3>"
+            }
+            else {
+                document.querySelector("div[class='resposta']").innerHTML = "<h3>Os números são iguais"
+            }
+        }
+    </script>
+     <footer>
+        <a href="condicionais.html">Voltar</a>
+    </footer>
+</body>
+</html>

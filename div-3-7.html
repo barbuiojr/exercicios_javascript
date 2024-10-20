@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisível por 3 e 7</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <div>
+        <h3>Divisível por 3 e 7</h3>
+        <p>Escreva um algoritmo que leia um número e informe se ele é divisível
+            por 3 e por 7.</p>
+        <form class="formulario">
+            <label for="numero1">Digite um número:</label>
+            <input type="number" name="n1"id="numero1">
+            <button type="button" onclick="testar()">Verificar</button>
+        </form>
+    </div>
+    <div class="resposta">
+
+    </div>
+
+    <script>
+        function testar(){
+            let n1 = parseInt(document.getElementById("numero1").value);
+            if (n1%3 == 0 && n1%7 == 0){
+                document.querySelector('div[class="resposta"]').innerHTML = '<h3>'+n1+' É divisível por 3 e por 7!</h3>';
+            } else if (n1%3 == 0 && n1%7 != 0){
+                document.querySelector('div[class="resposta"]').innerHTML = '<h3>'+n1+' É divisível apenas por 3!</h3>';
+            } else if (n1%3 != 0 && n1%7 == 0 ){
+                document.querySelector('div[class="resposta"]').innerHTML = '<h3>'+n1+' É divisível apenas por 7!</h3>';
+            }
+            else {
+                document.querySelector('div[class="resposta"]').innerHTML = '<h3>'+n1+' NÃO É divisível por 3 ou por 7!</h3>';
+            }
+        }
+    </script>
+     <footer>
+        <a href="condicionais.html">Voltar</a>
+    </footer>
+</body>
+</html>

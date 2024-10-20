@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcela Casa P´ropria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <div>
+        <h3>Parcela Casa Própria</h3>
+        <p>A prefeitura de Contagem abriu uma linha de crédito para os funcionários estatutários.
+            O valor máximo da prestação não poderá ultrapassar 30% do salário bruto. Fazer um
+            algoritmo que permita entrar com o salário bruto e o valor da prestação, e informar se
+            o empréstimo pode ou não ser concedido.</p>
+        <form class="formulario">
+            <label for="salario">Digite o salário bruto:</label>
+            <input type="number" name="salario"id="salario">
+            <label for="parcela">Digite o valor da parcela</label>
+            <input type="number" name="parcela" id="parcela">
+            <button type="button" onclick="calcularMargem()">Verificar</button>
+        </form>
+    </div>
+    <div class="resposta">
+
+    </div>
+
+    <script>
+        function calcularMargem(){
+           let sal = parseFloat(document.getElementById('salario').value);
+           let parc = parseFloat(document.getElementById('parcela').value);
+           let parcMax = sal*0.3
+           let salFormat = sal.toLocaleString("pt-br", {style:"currency", currency:"BRL"});
+           let parcFormat = parc.toLocaleString("pt-br", {style:"currency", currency:"BRL"});
+           let parcMaxFormat = parcMax.toLocaleString("pt-br", {style:"currency", currency:"BRL"});
+           if (parc<=parcMax) {
+            document.querySelector('div[class="resposta"]').innerHTML = '<h3>A parcela de '+parcFormat+' está dentro da margem permitida, que é até '+parcMaxFormat+'. O empréstimo está autorizado!</h3>';
+           } else {
+            document.querySelector('div[class="resposta"]').innerHTML = '<h3>A parcela de '+parcFormat+' excede a margem permitida, que é até '+parcMaxFormat+'. O empréstimo não atende às especificações.</h3>';
+           }
+        }
+    </script>
+     <footer>
+        <a href="condicionais.html">Voltar</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div>
+        <h3>Tabuada</h3>
+        <form class="formulario">
+            <label for="n">Informe um número para tabuada</label>
+            <input type="number" name="m" id="m">
+            <button type="button" onclick="tabuada()">Mostrar</button>
+        </form>
+       
+    </div>
+    <div class="resposta">
+        <table id = 'tabuada'></table>
+
+    </div>
+    <script>
+        function tabuada(){
+            let tabuada = document.getElementById('tabuada');
+            let m = parseInt(document.getElementById('m').value);
+            for (let n = 1; n < 11; n++){
+                let linha = document.createElement('tr');
+                let coluna1 = document.createElement('td');
+                coluna1.textContent = m+' X '+n+' = '+(n*m);
+                linha.appendChild(coluna1);
+                tabuada.appendChild(linha);
+            }
+            console.log(tabuada);
+            /*document.querySelector('div[class="resposta"]').innerHTML = '<table>'+tabuada+'</table>';*/
+        }
+    </script>
+    <footer>
+        <a href="repeticao.html">Voltar</a>
+    </footer>
+</body>
+</html>

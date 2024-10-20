@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço de venda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <div>
+        <h3>Cálculo do preço de venda</h3>
+        <p>Faça um algoritmo que receba o preço de custo de um produto e mostre o valor de
+            venda. Sabe-se que o preço de custo receberá um acréscimo de acordo com um
+            percentual informado pelo usuário.</p>
+        <form class="formulario">
+            <label for="custo">Digite o preço de custo: R$:</label>
+            <input type="number" name="custo" id="custo">
+            <label for="margem">Digite a margem percentual (%)</label>
+            <input type="number" name="margem" id="margem">
+            <button type="button" onclick="calcular()">Calcular</button>
+        </form>
+    </div>
+    <div class="resposta">
+
+    </div>
+
+    <script>
+        function calcular(){
+            let custo = parseFloat(document.getElementById("custo").value);
+            let margem = parseFloat(document.getElementById("margem").value);
+            let precovenda = parseFloat(((custo*margem/100)+custo).toFixed(2));
+            let precoFormat = precovenda.toLocaleString("pt-br",{style:"currency", currency:'BRL'});
+            let custoFormat = custo.toLocaleString("pt-br",{style:"currency", currency:'BRL'});
+            document.querySelector('div[class="resposta"]').innerHTML = '<h3>Para um preço de custo de '+custoFormat+', acrescentando uma margem de '+margem+'%, o preço de venda será de '+precoFormat+'</h3>'
+        }
+    </script>
+     <footer>
+        <a href="conceito.html">Voltar</a>
+    </footer>
+</body>
+</html>

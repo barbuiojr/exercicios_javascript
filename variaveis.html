@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variáveis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <div>
+        <h3>Troca de valores</h3>
+        <p>Ler dois valores para as variáveis A e B, e efetuar as trocas dos valores de forma que a
+            variável A passe a possuir o valor da variável B e a variável B passe a possuir o valor
+            da variável A. Apresentar os valores trocados.</p>
+        <form class="formulario">
+            <label for="numero1">Digite a variável A</label>
+            <input type="number" name="n2"id="numero1">
+            <label for="numero2">Digite a variável B</label>
+            <input type="number" name="n2" id="numero2">
+            <button type="button" onclick="calcular()">Somar</button>
+        </form>
+    </div>
+    <div class="resposta">
+
+    </div>
+
+    <script>
+        function calcular(){
+            let a = parseFloat(document.getElementById("numero1").value);
+            let b = parseFloat(document.getElementById("numero2").value);
+            let c;
+            c = a;
+            a = b;
+            b = c;
+            document.querySelector("div[class='resposta']").innerHTML = "<h3>Ocorreu a troca de variáveis</h3>"+"<h3>Agora a variável A vale "+a+", e a variável B vale "+b+"!</h3>"
+        }
+    </script>
+     <footer>
+        <a href="conceito.html">Voltar</a>
+    </footer>
+</body>
+</html>

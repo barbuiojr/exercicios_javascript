@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperatura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <div>
+        <h3>Celcius para Farenheit</h3>
+        <p>Ler uma temperatura em graus Celsius e apresentá-la convertida em graus Fahrenheit.
+            A fórmula de conversão é: F=(9*C+160) / 5, sendo F a temperatura em Fahrenheit e C
+            a temperatura em Celsius.</p>
+        <form class="formulario">
+            <label for="tc">Digite a temperatura em °C</label>
+            <input type="number" name="tc"id="tc">
+            <button type="button" onclick="converter()">Converter</button>
+        </form>
+    </div>
+    <div class="resposta">
+
+    </div>
+
+    <script>
+        function converter(){
+            let tc = parseFloat(document.getElementById("tc").value);
+            let tf = (9*tc+160)/5
+            tf = parseFloat(tf.toFixed(1))
+            document.querySelector("div[class='resposta']").innerHTML = "<h3>A temperatura "+tc+"°C equivale a "+tf+"°F</h3>"
+        }
+    </script>
+     <footer>
+        <a href="conceito.html">Voltar</a>
+    </footer>
+</body>
+</html>

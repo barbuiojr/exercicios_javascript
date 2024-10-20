@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par ou Ímpar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <div>
+        <h3>Par ou Ímpar</h3>
+        <p>Construa um algoritmo que determine (imprima) se um dado número
+            N inteiro (recebido através do teclado) é PAR ou ÍMPAR.</p>
+        <form class="formulario">
+            <label for="numero1">Digite o número</label>
+            <input type="number" name="n2"id="numero1">
+            <button type="button" onclick="testar()">Testar</button>
+        </form>
+    </div>
+    <div class="resposta">
+
+    </div>
+
+    <script>
+        function testar(){
+            let n1 = parseInt(document.getElementById("numero1").value);
+            if (n1%2 == 0){
+                document.querySelector('div[class="resposta"]').innerHTML = '<h3>'+n1+' é PAR</h3>';
+            } else {
+                document.querySelector('div[class="resposta"]').innerHTML = '<h3>'+n1+' é ÍMPAR</h3>';
+            }
+        }
+    </script>
+     <footer>
+        <a href="condicionais.html">Voltar</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendimento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <div>
+        <h3>Cálculo de rendimento</h3>
+        <p>Faça um algoritmo que receba um valor que foi depositado e exiba o valor com
+            rendimento após um mês.
+            Considere fixo o juro da poupança em 0,70% a. m.</p>
+        <form class="formulario">
+            <label for="real">Valor depositado:</label>
+            <input type="number" name="real" id="real">
+            <button type="button" onclick="calcular()">Calcular</button>
+        </form>
+    </div>
+    <div class="resposta">
+
+    </div>
+
+    <script>
+        function calcular(){
+            let real = parseFloat(document.getElementById("real").value);
+            let valor = parseFloat((real*1.007).toFixed(2));
+            let valorFormat = valor.toLocaleString("pt-br",{style:"currency", currency:'BRL'})
+            let realFormat = real.toLocaleString("pt-br",{style:"currency", currency:'BRL'})
+            document.querySelector('div[class="resposta"]').innerHTML = '<h3>O depósito de '+realFormat+' valerá '+valorFormat+' após 1 mês de rendimento</h3>'
+        }
+    </script>
+     <footer>
+        <a href="conceito.html">Voltar</a>
+    </footer>
+</body>
+</html>

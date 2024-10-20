@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de salário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <h3>Cálculo de salário</h3>
+        <p>Escrever um algoritmo que leia o nome de um vendedor, o seu salário fixo e o total de
+            vendas efetuadas por ele no mês (em dinheiro). Sabendo que este vendedor ganha 15%
+            de comissão sobre suas vendas efetuadas, informar o seu nome, o salário fixo e salário
+            no final do mês.</p>
+        <form class="formulario">
+            <label for="nome">Nome do vendedor:</label>
+            <input type="text" name="n2"id="nome">
+            <label for="fixo">Salário fixo</label>
+            <input type="number" name="n2" id="fixo">
+            <label for="vendas">Total de vendas</label>
+            <input type="number" name="n2" id="vendas">
+            <button type="button" onclick="calcular()">Calcular</button>
+        </form>
+    </div>
+    <div class="resposta">
+
+    </div>
+
+    <script>
+        function calcular(){
+            let nome = document.getElementById("nome").value;
+            let salario = parseFloat(document.getElementById("fixo").value);
+            let vendas = parseFloat(document.getElementById("vendas").value);
+            let mensal = salario+(vendas*0.15);
+            let mensalformat = mensal.toLocaleString("pt-br", {style:"currency", currency:"BRL"})
+            document.querySelector("div[class='resposta']").innerHTML = "<h3>O salário de "+nome+" para esse mês será de "+mensalformat+"</h3>";
+        }
+    </script>
+     <footer>
+        <a href="conceito.html">Voltar</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raiz quadrada</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <div>
+        <h3>Raiz quadrada</h3>
+        <p>Escreva um algoritmo que leia um número e imprima a raiz quadrada
+            do número caso ele seja positivo ou igual a zero e o quadrado do número caso ele seja
+            negativo.</p>
+        <form class="formulario">
+            <label for="numero1">Digite um número</label>
+            <input type="number" name="n1"id="numero1">
+            <button type="button" onclick="calcular()">Calcular</button>
+        </form>
+    </div>
+    <div class="resposta">
+
+    </div>
+
+    <script>
+        function calcular(){
+            let n1 = parseInt(document.getElementById("numero1").value);
+            if (n1>=0){
+                document.querySelector('div[class="resposta"]').innerHTML = '<h3>A raiz quadrada de '+n1+' é '+(n1**0.5)+'</h3>';
+            } else if (n1<0){
+                document.querySelector('div[class="resposta"]').innerHTML = '<h3>'+n1+'² é igual a '+(n1*n1)+'</h3>';
+            }
+        }
+    </script>
+     <footer>
+        <a href="condicionais.html">Voltar</a>
+    </footer>
+</body>
+</html>

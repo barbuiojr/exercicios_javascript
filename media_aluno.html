@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média do aluno</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <h3>Média do aluno</h3>
+        <p>Escrever um algoritmo que leia o nome de um aluno e as notas das três provas que ele
+            obteve no semestre. No final informar o nome do aluno e a sua média (aritmética).</p>
+        <form class="formulario">
+            <label for="nome">Nome do aluno:</label>
+            <input type="text" name="nome"id="nome">
+            <label for="nota1">Primeira nota</label>
+            <input type="number" name="nota1" id="nota1">
+            <label for="nota2">Segunda nota</label>
+            <input type="number" name="nota2" id="nota2">
+            <label for="nota3">Terceira nota</label>
+            <input type="number" name="nota3" id="nota3">
+            <button type="button" onclick="calcular()">Calcular</button>
+        </form>
+    </div>
+    <div class="resposta">
+
+    </div>
+
+    <script>
+        function calcular(){
+            let nome = document.getElementById("nome").value;
+            let nota1 = parseFloat(document.getElementById("nota1").value);
+            let nota2 = parseFloat(document.getElementById("nota2").value);
+            let nota3 = parseFloat(document.getElementById("nota3").value);
+            let media = (nota1+nota2+nota3)/3;
+            media = parseFloat(media.toFixed(1))
+            document.querySelector("div[class='resposta']").innerHTML = "<h3>A média do aluno "+nome+" foi "+media+"</h3>";
+        }
+    </script>
+     <footer>
+        <a href="conceito.html">Voltar</a>
+    </footer>
+</body>
+</html>

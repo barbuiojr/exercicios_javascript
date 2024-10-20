@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolar para Real</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <div>
+        <h3>Conversor de moedas</h3>
+        <p>Elaborar um algoritmo que efetue a apresentação do valor da conversão em real (R$)
+            de um valor lido em dólar (US$). O algoritmo deverá solicitar o valor da cotação do
+            dólar e também a quantidade de dólares disponíveis com o usuário.</p>
+        <form class="formulario">
+            <label for="dolar">Valor em U$:</label>
+            <input type="number" name="dolar" id="dolar">
+            <label for="cotacao">Cotação do dia (R$):</label>
+            <input type="number" name="cotacao" id="cotacao">
+            <button type="button" onclick="converter()">Converter</button>
+        </form>
+    </div>
+    <div class="resposta">
+
+    </div>
+
+    <script>
+        function converter(){
+            let us = parseFloat(document.getElementById("dolar").value);
+            let cot = parseFloat(document.getElementById("cotacao").value);
+            let real = parseFloat((us*cot).toFixed(2));
+            let usFormat = us.toLocaleString('en-US', {style:'currency', currency:'USD'})
+            let realFormat = real.toLocaleString("pt-br",{style:"currency", currency:'BRL'})
+            document.querySelector('div[class="resposta"]').innerHTML = '<h3>A quantia de US'+usFormat+' equivale a '+realFormat+'</h3>'
+        }
+    </script>
+     <footer>
+        <a href="conceito.html">Voltar</a>
+    </footer>
+</body>
+</html>

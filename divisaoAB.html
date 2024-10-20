@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A divisível por B</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <div>
+        <h3>A divisível por B</h3>
+        <p>Escreva um algoritmo para determinar se um número A é divisível por
+            um outro número B. Esses valores devem ser fornecidos pelo usuário.</p>
+        <form class="formulario">
+            <label for="numero1">Digite o número A</label>
+            <input type="number" name="n2"id="numero1">
+            <label for="numero2">Digite o número B</label>
+            <input type="number" name="n2" id="numero2">
+            <button type="button" onclick="verificar()">Verificar</button>
+        </form>
+    </div>
+    <div class="resposta">
+
+    </div>
+
+    <script>
+        function verificar(){
+            let n1 = parseInt(document.getElementById("numero1").value);
+            let n2 = parseInt(document.getElementById("numero2").value);
+            let res = n1%n2
+            if (res == 0){
+                document.querySelector("div[class='resposta']").innerHTML = "<h3>O número "+n1+" É divisível por "+n2+"</h3>"
+            } else {
+                document.querySelector("div[class='resposta']").innerHTML = "<h3>O número "+n1+" NÃO É divisível por "+n2+"</h3>"
+            }
+        }
+    </script>
+     <footer>
+        <a href="condicionais.html">Voltar</a>
+    </footer>
+</body>
+</html>

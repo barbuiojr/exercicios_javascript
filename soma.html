@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <div>
+        <h3>Soma</h3>
+        <p>Faça um algoritmo que receba dois números e exiba o resultado da sua soma</p>
+        <form class="formulario">
+            <label for="numero1">Digite o primeiro número</label>
+            <input type="number" name="n2"id="numero1">
+            <label for="numero2">Digite o segundo número</label>
+            <input type="number" name="n2" id="numero2">
+            <button type="button" onclick="somar()">Somar</button>
+        </form>
+    </div>
+    <div class="resposta">
+
+    </div>
+
+    <script>
+        function somar(){
+            let n1 = parseFloat(document.getElementById("numero1").value);
+            let n2 = parseFloat(document.getElementById("numero2").value);
+            let soma = n1+n2;
+            document.querySelector("div[class='resposta']").innerHTML = "<h3>A soma de "+n1+" com "+n2+" vale "+soma+"</h3>"
+        }
+    </script>
+     <footer>
+        <a href="conceito.html">Voltar</a>
+    </footer>
+</body>
+</html>

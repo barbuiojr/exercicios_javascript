@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior que 20</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <div>
+        <h3>Maior que 20</h3>
+        <p>Escreva um algoritmo que leia um número e o imprima caso ele seja maior que 20.</p>
+        <form class="formulario">
+            <label for="numero1">Digite o número</label>
+            <input type="number" name="n2"id="numero1">
+            <button type="button" onclick="testar()">Testar</button>
+        </form>
+    </div>
+    <div class="resposta">
+
+    </div>
+
+    <script>
+        function testar(){
+            let n1 = parseFloat(document.getElementById("numero1").value);
+            if (n1>20){
+                document.querySelector('div[class="resposta"]').innerHTML = '<h3>O número '+n1+' é maior que 20</h3>';
+            } else {
+                document.querySelector('div[class="resposta"]').innerHTML = '<h3>O número digitado NÃO é maior que 20</h3>'
+            }
+        }
+    </script>
+     <footer>
+        <a href="condicionais.html">Voltar</a>
+    </footer>
+</body>
+</html>

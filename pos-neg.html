@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positivo - Negativo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <div>
+        <h3>Positivo - Negativo - Nulo</h3>
+        <p>Escreva um algoritmo para determinar se um dado número N (recebido
+            através do teclado) é POSITIVO, NEGATIVO ou NULO.</p>
+        <form class="formulario">
+            <label for="numero1">Digite o número</label>
+            <input type="number" name="n1"id="numero1">
+            <button type="button" onclick="testar()">Testar</button>
+        </form>
+    </div>
+    <div class="resposta">
+
+    </div>
+
+    <script>
+        function testar(){
+            let n1 = parseInt(document.getElementById("numero1").value);
+            if (n1>0){
+                document.querySelector('div[class="resposta"]').innerHTML = '<h3>'+n1+' é POSITIVO</h3>';
+            } else if (n1<0){
+                document.querySelector('div[class="resposta"]').innerHTML = '<h3>'+n1+' é NEGATIVO</h3>';
+            } else {
+                document.querySelector('div[class="resposta"]').innerHTML = '<h3>'+n1+' é NULO</h3>';
+            }
+        }
+    </script>
+     <footer>
+        <a href="condicionais.html">Voltar</a>
+    </footer>
+</body>
+</html>

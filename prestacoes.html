@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestações</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <div>
+        <h3>Cálculo de prestações</h3>
+        <p>A Loja Mamão com Açúcar está vendendo seus produtos em 5 (cinco) prestações sem
+            juros. Faça um algoritmo que receba um valor de uma compra e mostre o valor das
+            prestações.</p>
+        <form class="formulario">
+            <label for="real">Digite o valor da compra R$:</label>
+            <input type="number" name="real" id="real">
+            <button type="button" onclick="calcular()">Calcular</button>
+        </form>
+    </div>
+    <div class="resposta">
+
+    </div>
+
+    <script>
+        function calcular(){
+            let real = parseFloat(document.getElementById("real").value);
+            let prestacao = parseFloat((real/5).toFixed(2));
+            let prestacaoFormat = prestacao.toLocaleString("pt-br",{style:"currency", currency:'BRL'})
+            let realFormat = real.toLocaleString("pt-br",{style:"currency", currency:'BRL'})
+            document.querySelector('div[class="resposta"]').innerHTML = '<h3>A compra no valor de '+realFormat+' será parcelada em 5 vezes de '+prestacaoFormat+'</h3>'
+        }
+    </script>
+     <footer>
+        <a href="conceito.html">Voltar</a>
+    </footer>
+</body>
+</html>
