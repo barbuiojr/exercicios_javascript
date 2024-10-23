@@ -10,7 +10,7 @@ body{
     display: flex;
     margin: 30px auto;
     justify-content: space-around;
-    width: 400px;
+    width: 600px;
     text-align: center;
     gap: 30px;
 }

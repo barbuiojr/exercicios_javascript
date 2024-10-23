@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequência de Fibonacci</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div>
+        <h3>Sequência de Fibonacci</h3>
+        <p>Crie um programa que leia o nome completo de uma pessoa e mostre o primeiro e último nome separadamente.</p>
+            <form class="formulario">
+                <label for="nome">Digite o nome completo:</label>
+                <input type="text" name="nome" id="nome">
+                <button type="button" onclick="nomes()">Separar</button>
+            </form>
+       
+    </div>
+    <div class="resposta">
+        <table id="resp"></table>
+        <script>
+            function nomes(){
+                let nome = document.getElementById("nome").value
+                let nomes = nome.split(" ");
+                let primeiro = nomes[0];
+                let ultimo = nomes[nomes.length-1];
+                document.querySelector('div[class="resposta"]').innerHTML = '<h3>O primeiro nome é '+primeiro+', e o último nome é '+ultimo+'</h3>'
+               
+            }
+
+        </script>
+
+    </div>
+
+    <footer>
+        <a href="ex_22_10.html">Voltar</a>
+    </footer>
+</body>
+</html>

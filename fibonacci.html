@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequência de Fibonacci</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div>
+        <h3>Sequência de Fibonacci</h3>
+        <p>A série de Fibonacci é formada pela sequência:
+
+            1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...
+            
+            Escreva um algoritmo que gere a série de FIBONACCI até o N-ésimo termo.</p>
+            <form class="formulario">
+                <label for="numero">Informe quantos termos:</label>
+                <input type="number" name="numero" id="numero">
+                <button type="button" onclick="fibonacci()">Gerar</button>
+            </form>
+       
+    </div>
+    <div class="resposta">
+        <script>
+            let fib = '';
+            function fibonacci(){
+                let termos = parseInt(document.getElementById("numero").value);
+                let t1 = 0;
+                let t2 = 1;
+                let t3 = 1;
+                                
+                for (let n = 1; n < (termos+1); n++){
+                    fib = fib+t3+', '
+                    t3 = t1+t2;
+                    t1 = t2;
+                    t2 = t3;
+                }
+                document.querySelector('div[class="resposta"]').innerHTML = '<h3>'+fib+'</h3>'
+        }
+
+        </script>
+
+    </div>
+
+    <footer>
+        <a href="ex_22_10.html">Voltar</a>
+    </footer>
+</body>
+</html>
